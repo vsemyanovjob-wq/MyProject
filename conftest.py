@@ -7,6 +7,7 @@ from pages.tables_page import TablesPage
 from pages.modal_windows import ModalWindowsPage
 from pages.frames_and_iframe_pages import FramesPage
 from pages.download_files_page import DownloadFilesPage
+from pages.ui_components_page import UiComponents
 
 
 
@@ -55,3 +56,8 @@ def download_page(page):
 def hover_page(page):
     hover_page = HoverAndTooltipsPage(page)
     return hover_page
+
+@pytest.fixture()
+def ui_page(page):
+    ui_page = UiComponents(page)
+    return ui_page
