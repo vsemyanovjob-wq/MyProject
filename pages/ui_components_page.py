@@ -8,7 +8,3 @@ class UiComponents(BasePage):
         {'name': 'Cypress', 'Locator': '[onclick="toggleAccordion(\'accordion3\')"]','content_locator':'#accordion3','text': 'Cypress — это fast, easy и reliable testing'},
         {'name': 'Appium', 'Locator': '[onclick="toggleAccordion(\'accordion4\')"]','content_locator':'#accordion4','text': 'Appium — это open-source инструмент'}
     ]
-    # DROP_DOWN_SELENIUM_BTN = '#'
-    # DROP_DOWN_PLAYWRIGHT_BTN = '#'
-    # DROP_DOWN_CYPRESS_BTN = '#'
-    # DROP_DOWN_APPIUM_BTN = '#'
