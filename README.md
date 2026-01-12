@@ -23,7 +23,8 @@
 - Python  
 - Pytest  
 - Playwright  
-- Page Object Model (POM)  
+- Page Object Model (POM)
+- Allure Reports
 
 ---
 ## Браузер для тестирования
@@ -49,7 +50,21 @@
     ```bash
     playwright install
     ```
-
+   
+## Отчёты Allure (опционально)
+1. Установите Allure CLI
+    ```bash
+    scoop install allure
+    ```
+2. Установите зависимость в проекте:
+    ```bash
+    pip install allure-pytest
+    ```
+3. Запуск тестов:
+    ```bash
+    pytest --alluredir=allure-results
+    allure serve allure-results
+    ```
 
 ##  Запуск тестов
 
