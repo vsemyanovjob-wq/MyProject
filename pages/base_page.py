@@ -47,6 +47,14 @@ class BasePage:
         # Проверка, что есть нужный текст
         expect(self.page.locator(locator)).to_contain_text(text)
 
+    def check_exact_text(self,locator: str, text: str):
+        # Проверка точного текста
+        expect(self.page.locator(locator)).to_have_text(text)
+
+    def check_input_value(self, locator: str, value: str):
+        # Проверка нужного значения
+        expect(self.page.locator(locator)).to_have_value(value)
+
     def check_found_texts_in_list(self, container: str, text: str):
         # Поиск текста в контейнере
         locator = self.page.locator(container)
