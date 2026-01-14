@@ -28,6 +28,9 @@ def test_click_count_increases(open_main_page,ui_page):
     ui_page.click_on_element_btn(ui_page.SHADOW_BTN)
     ui_page.check_found_text(ui_page.SHADOW_HOST,'2')
 
+def test_counter_default_value_is_zero(open_main_page,ui_page):
+    ui_page.check_found_text(ui_page.SHADOW_HOST,'0')
+
 # ==========================================
 # NEGATIVE SCENARIOS
 # ==========================================
