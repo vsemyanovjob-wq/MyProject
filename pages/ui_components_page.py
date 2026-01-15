@@ -32,3 +32,9 @@ class UiComponents(BasePage):
     SHADOW_HOST = '#shadowHost'
     SHADOW_BTN = '#shadowButton'
     CLICK_COUNTER = '#shadowClickCount'
+
+    # Локаторы Breadcrumbs
+    NAVIGATE_TO_PRODUCT_BTN = "button[onclick=\"navigateBreadcrumb('products')\"]"
+    NAVIGATE_TO_CATEGORY_BTN = "button[onclick=\"navigateBreadcrumb('category')\"]"
+    NAVIGATE_TO_ITEM_BTN = "button[onclick=\"navigateBreadcrumb('item')\"]"
+    PAGE_CONTENT_RESULT = '#pageContent'
