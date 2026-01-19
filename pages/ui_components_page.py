@@ -42,3 +42,8 @@ class UiComponents(BasePage):
     # Локаторы Autocomplete / Typeahead
     RELATIVE_BTN = '#autocompleteInput'
     TEXT_IN_DROPDOWN_AUTO = '#autocompleteDropdown'
+
+    # Локаторы Copy to Clipboard
+    COPY_IN_BUFFER_BTN = '#copyButton'
+    COPY_RESULT_BTN = '#copyText'
+    COPY_INFO_BTN = '#copySuccess'

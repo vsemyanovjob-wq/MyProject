@@ -40,7 +40,10 @@ def test_autocomplete_suggestions(open_main_page,ui_page):
     ui_page.fill_input(ui_page.RELATIVE_BTN,'Pl')
     ui_page.check_found_text(ui_page.TEXT_IN_DROPDOWN_AUTO,'Playwright')
 
-
+def test_copy_text_in_buffer(open_main_page,ui_page):
+    ui_page.click_on_element_btn(ui_page.COPY_IN_BUFFER_BTN)
+    ui_page.check_found_text(ui_page.COPY_INFO_BTN,'Скопировано в буфер обмена!')
+    ui_page.check_found_text(ui_page.COPY_RESULT_BTN,'Скопировано!')
 
 # ==========================================
 # NEGATIVE SCENARIOS
