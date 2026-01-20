@@ -47,3 +47,11 @@ class UiComponents(BasePage):
     COPY_IN_BUFFER_BTN = '#copyButton'
     COPY_RESULT_BTN = '#copyText'
     COPY_INFO_BTN = '#copySuccess'
+
+    # Локаторы Tabs / Tabbed Interface
+    TABS_EXPECTED_DATA = [
+        {'locator': '#tab-javascript', 'text': 'JavaScript для автоматизации','locator_content': '#content-javascript'},
+        {'locator': '#tab-java', 'text': 'Java для автоматизации', 'locator_content': '#content-java'},
+        {'locator': '#tab-csharp', 'text': 'C# для автоматизации','locator_content': '#content-csharp'},
+        {'locator': '#tab-python', 'text': 'Python для автоматизации','locator_content': '#content-python'}
+    ]

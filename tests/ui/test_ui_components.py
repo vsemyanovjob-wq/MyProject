@@ -45,6 +45,11 @@ def test_copy_text_in_buffer(open_main_page,ui_page):
     ui_page.check_found_text(ui_page.COPY_INFO_BTN,'Скопировано в буфер обмена!')
     ui_page.check_found_text(ui_page.COPY_RESULT_BTN,'Скопировано!')
 
+@pytest.mark.parametrize('element',UiComponents.TABS_EXPECTED_DATA )
+def test_switch_tabs(open_main_page,ui_page,element):
+    ui_page.click_on_element_btn(element['locator'])
+    ui_page.check_found_text(element['locator_content'],element['text'])
+
 # ==========================================
 # NEGATIVE SCENARIOS
 # ==========================================
