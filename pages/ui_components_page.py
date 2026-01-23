@@ -55,3 +55,10 @@ class UiComponents(BasePage):
         {'locator': '#tab-csharp', 'text': 'C# для автоматизации','locator_content': '#content-csharp'},
         {'locator': '#tab-python', 'text': 'Python для автоматизации','locator_content': '#content-python'}
     ]
+
+    # Локаторы WYSIWYG Editor
+    FORMAT_TEXT_BOLT_BTN = 'button[onclick="formatText(\'bold\')"]'
+    FORMAT_TEXT_ITALIC_BTN = 'button[onclick="formatText(\'italic\')"]'
+    FORMAT_TEXT_UNDERLINE = 'button[onclick="formatText(\'underline\')"]'
+    DELETE_TEXT_BTN = 'button[onclick="clearEditor()"]'
+    FORM_WYSIWYG_EDITOR = '#wysiwygEditor'

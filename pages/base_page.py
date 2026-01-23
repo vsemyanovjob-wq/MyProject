@@ -62,6 +62,12 @@ class BasePage:
         container_text = locator.inner_text()
         assert text in container_text, f"'{text}'"
 
+    def check_editor_is_empty(self, locator: str):
+        # Проверка, что элемент не имеет текста
+        editor = self.page.locator(locator)
+        text = editor.inner_text()
+        assert text.strip() == ''
+
     def check_the_number_of_entries(self, locator: str, email_input: int):
         # Проверка количества элементов
         element = self.page.locator(locator)
@@ -111,6 +117,10 @@ class BasePage:
         element = self.page.locator(locator)
         expect(element).to_have_css('opacity', '0')
 
+    def check_text_wrapped_in_tag(self, tag: str, text: str):
+        element = self.page.locator(tag, has_text=text)
+        expect(element).to_be_visible()
+
     def refresh_page(self):
         # Обновить страницу
         self.page.reload()
@@ -152,6 +162,16 @@ class BasePage:
         # Наведение на элемент с тултипом
         self.page.locator(locator).hover()
 
+    def select_all_text(self,locator: str):
+        # Выделить текст
+        self.page.locator(locator).press('Control+A')
+
+    def delete_all_text(self,locator: str):
+        # Удаляет текст
+        element = self.page.locator(locator)
+        element.click()
+        element.press('Control+A')
+        element.press('Delete')
 
 
 

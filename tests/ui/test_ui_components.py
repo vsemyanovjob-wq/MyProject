@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from pages.ui_components_page import UiComponents
 # ==========================================
@@ -45,10 +47,25 @@ def test_copy_text_in_buffer(open_main_page,ui_page):
     ui_page.check_found_text(ui_page.COPY_INFO_BTN,'Скопировано в буфер обмена!')
     ui_page.check_found_text(ui_page.COPY_RESULT_BTN,'Скопировано!')
 
-@pytest.mark.parametrize('element',UiComponents.TABS_EXPECTED_DATA )
+@pytest.mark.parametrize('element',UiComponents.TABS_EXPECTED_DATA, ids=[e['text'] for e in UiComponents.TABS_EXPECTED_DATA] )
 def test_switch_tabs(open_main_page,ui_page,element):
     ui_page.click_on_element_btn(element['locator'])
     ui_page.check_found_text(element['locator_content'],element['text'])
+
+def test_change_format_text_on_bolt(open_main_page,ui_page):
+    ui_page.select_all_text(ui_page.FORM_WYSIWYG_EDITOR)
+    ui_page.click_on_element_btn(ui_page.FORMAT_TEXT_BOLT_BTN)
+    ui_page.check_text_wrapped_in_tag('b', 'Начните печатать здесь... Используйте кнопки выше для форматирования текста.')
+
+def test_change_format_text_on_italic(open_main_page,ui_page):
+    ui_page.select_all_text(ui_page.FORM_WYSIWYG_EDITOR)
+    ui_page.click_on_element_btn(ui_page.FORMAT_TEXT_ITALIC_BTN)
+    ui_page.check_text_wrapped_in_tag('i','Начните печатать здесь... Используйте кнопки выше для форматирования текста.')
+
+def test_change_format_text_on_underline(open_main_page,ui_page):
+    ui_page.select_all_text(ui_page.FORM_WYSIWYG_EDITOR)
+    ui_page.click_on_element_btn(ui_page.FORMAT_TEXT_UNDERLINE)
+    ui_page.check_text_wrapped_in_tag('u','Начните печатать здесь... Используйте кнопки выше для форматирования текста.')
 
 # ==========================================
 # NEGATIVE SCENARIOS
@@ -63,3 +80,9 @@ def test_back_navigation_from_last_step(open_main_page, ui_page):
     ui_page.click_on_element_btn(ui_page.BTN_BACK_PAGE_3)
     ui_page.click_on_element_btn(ui_page.BTN_BACK_PAGE_2)
     ui_page.check_input_value(ui_page.WIZARD_NAME,'Оля')
+
+def test_check_empty_input(open_main_page,ui_page):
+    ui_page.delete_all_text(ui_page.FORM_WYSIWYG_EDITOR)
+    ui_page.check_editor_is_empty(ui_page.FORM_WYSIWYG_EDITOR)
+
+
